@@ -1,1 +1,24 @@
-// completar
+import packs.*
+
+describe "Etapa 1" {
+  const pepe = new Coordinador(cantidadDeViajes = 19, estaMotivado = false, experiencia = 0, rol = acompaniante)
+  const packNacional = new PackNacional(duracion = 14, precioBase = 100000, coordinador = pepe, provincia = "Cordoba")
+  
+  test "Un pack nacional sin beneficios vigentes devuelve el mismo precio base" {
+    assert.equals(100000, packNacional.costoFinal())
+  }
+  
+  test "Prueba de error en asignar rol invalido a coordinador" {
+    assert.throwsExceptionWithMessage("Rol inválido.", { pepe.cambiarRol(otroRol) })
+    
+    assert.throwsException({ pepe.cambiarRol(otroRol) })
+  }
+  
+  test "Un pack nacional con 2 beneficios vigentes suma correctamente sus costos al precio base" {
+    
+  }
+  
+  test "Un pack internacional sin beneficios vigentes calcula correctamente el total con el 20% de recargo" {
+    
+  }
+}
